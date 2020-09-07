@@ -1,1 +1,1 @@
-"# udemy-home-work-new" 
+Полный курс по JavaScript + React - с нуля до результа
