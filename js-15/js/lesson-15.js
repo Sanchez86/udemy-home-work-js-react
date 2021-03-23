@@ -24,7 +24,7 @@ if(persomalMoveDB.count < 10){
 for(let i=0; i<persomalMoveDB.count; i++){
     let a = prompt('Один из последних просмотренных фильмов?', "");
     let b = +prompt('На сколько его оцение?', "");
-    
+
     if(a != null && a != '' && a.length < 50 && b != null && b != ''){
         persomalMoveDB.movies[a] = b;
     }else{
@@ -37,7 +37,7 @@ let i=0;
 while( i<persomalMoveDB.count ){
     let a = prompt('Один из последних просмотренных фильмов?', "");
     let b = +prompt('На сколько его оцение?', "");
-    
+
     if(a != null && a != '' && a.length < 50 && b != null && b != ''){
         persomalMoveDB.movies[a] = b;
     }else{
@@ -51,7 +51,7 @@ let i=0;
 do{
     let a = prompt('Один из последних просмотренных фильмов?', "");
     let b = +prompt('На сколько его оцение?', "");
-    
+
     if(a != null && a != '' && a.length < 50 && b != null && b != ''){
         persomalMoveDB.movies[a] = b;
     }else{

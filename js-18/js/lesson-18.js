@@ -24,7 +24,7 @@ function rememberMyFilms(){
     for(let i=0; i<persomalMoveDB.count; i++){
         let a = prompt('Один из последних просмотренных фильмов?', "");
         let b = +prompt('На сколько его оцение?', "");
-        
+
         if(a != null && a != '' && a.length < 50 && b != null && b != ''){
             persomalMoveDB.movies[a] = b;
         }else{
@@ -56,7 +56,7 @@ showMyDB();
 function writeYourGenres(){
     for(let i=1; i<=3; i++){
         let q = prompt(`Ваш любимый жанр под номером ${i}`, '');
-        
+
         if(q != null && q != '' && q.length < 50){
             persomalMoveDB.generes[i-1] = q;
         }else{
@@ -65,6 +65,3 @@ function writeYourGenres(){
     }
 }
 writeYourGenres();
-
-
-
