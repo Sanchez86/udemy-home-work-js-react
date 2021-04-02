@@ -17,9 +17,9 @@ inputUah.addEventListener('input', (event) => {
     // метод для настроек, которые в будущем помогут сделать запрос
     request.open('GET', 'js/current.json');
 
-   /* уточняем запрос. что именно отправляем и какая кодировка
+   /*setRequestHeader - уточняем запрос. что именно отправляем и какая кодировка
     чтоб сервер понимал, что он принимает в себя (json файл или изображение)
-    setRequestHeader - заголовок для передачи json файлов
+    'application/json - заголовок для передачи json файлов
     кодировку устанавливать не обязательно*/
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 
