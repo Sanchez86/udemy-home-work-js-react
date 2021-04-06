@@ -27,6 +27,8 @@ req.then(function(data){
     console.log(data);
 }).catch((dataError) => {
     console.log(dataError);
+}).finally(() => {
+    console.log('finally');
 });
 
 
