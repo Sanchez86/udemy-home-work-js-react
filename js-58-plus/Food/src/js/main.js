@@ -285,6 +285,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = window.getComputedStyle(slidesWrapper).width;
     let counter = 0;
     let offset = 0;
+    const slider = document.querySelector('.offer__slider');
+
+    const dots = document.createElement('div');
+    dots.classList.add('carousel-indicators');
+
+    slider.append(dots);
+    slides.forEach((slide, i, arr) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        dot.setAttribute('data-index', i);
+        dots.append(dot);
+        if(i === 0){
+            dot.classList.add('active');
+        }
+        dot.addEventListener('click', (event) => {
+            counter = +event.target.dataset.index;
+            showSlide(event.target.dataset.index);
+        })
+    });
 
     //увеличил ширину слайдера на колличество слайдов
     inner.style.width = parseInt(width) * slides.length + '%';
