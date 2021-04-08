@@ -190,12 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return await res.json();
     };
 
-    getResource('http://localhost:3000/menu')
+    /*getResource('http://localhost:3000/menu')
     .then((data) => {
         data.forEach(({img, title, descr, price}) => {
             new Card(img, title, descr, price*28, '.menu__field .container').render();
         })
-    });
+    });*/
 
     // Forms
 
@@ -208,9 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
         fail: "Что-то пошло не так",
     };
 
-    forms.forEach(form => {
+    /*forms.forEach(form => {
         bindPostData(form);
-    });
+    });*/
 
 
     const postData = async (url, data) => {
@@ -274,8 +274,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     };
 
-    /*fetch('http://localhost:3000/menu')
-        .then(data => data.json())
-        .then(res => console.log(res));
-*/
+    //Slider
+    const btnPrev = document.querySelector('.offer__slider-prev');
+    const btnNext = document.querySelector('.offer__slider-next');
+    const current = document.querySelector('#current');
+    const total = document.querySelector('#total');
+    const slides = document.querySelectorAll('.offer__slide');
+    let counter = 0;
+
+    total.innerHTML = (slides.length < 10) ? `0${+slides.length}` : +slides.length;
+
+    function start() {
+        slides.forEach((slide, i, arr) => {
+            slide.classList.add('hide');
+            arr[0].classList.remove('hide');
+        });
+
+        current.innerHTML = (counter < 10) ? `0${counter+1}` : counter+1;
+    }
+    start();
+
+    function showSlide(index){
+        slides.forEach((slide, i, arr) => {
+            slide.classList.add('hide');
+            arr[index].classList.remove('hide', 'current');
+        });
+
+        current.innerHTML = (counter < 10) ? `0${counter+1}` : counter+1;
+    }
+
+    function prev () {
+        counter --;
+        if(counter < 0){
+            counter = slides.length-1;
+        }
+        showSlide(counter);
+    }
+
+    function next () {
+        counter ++;
+        if(counter === slides.length){
+            counter = 0;
+        }
+        showSlide(counter);
+    }
+
+    btnPrev.addEventListener('click', function () {
+        prev ();
+    });
+    btnNext.addEventListener('click', function () {
+        next ();
+    });
+
+
 });
