@@ -90,7 +90,7 @@ function calc () {
 
     getStaticData('#gender', 'calculating__choose-item_active');
     getStaticData('.calculating__choose_big', 'calculating__choose-item_active');
-});
+
 }
 
-module.exports = calc;
+export default calc;
